@@ -1,28 +1,29 @@
 h1 {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 3rem 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 3rem 0;
 }
 .my-table {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 500px; 
-    margin: 0 auto; 
-  }
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
 
 .my-table th {
-    background-color: #4cabaf; 
-    color: white; 
-    text-align: left; 
-    padding: 8px;
-  }
-  
-  .my-table td {
-    border: 1px solid #ddd; 
-    padding: 8px; 
-  }
-  
-  .my-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;}
+  background-color: #4cabaf;
+  color: white;
+  text-align: left;
+  padding: 8px;
+}
+
+.my-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.my-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
