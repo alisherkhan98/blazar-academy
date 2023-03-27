@@ -3,10 +3,12 @@
     // hero section
     .hero-section {
       flex-direction: row;
+      gap: 50px;
       .hero-section_image {
         width: 50%;
       }
       .hero-section_container {
+        margin-left: auto;
         width: 50%;
       }
     }
@@ -27,7 +29,7 @@
     // testimonial section
     .testimonial-section {
       .testimonial-section_card-container {
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -40,7 +42,6 @@
 
     // brands-section
     .brands-section {
-     
       .brands-container {
         grid-template-columns: repeat(5, 1fr);
       }
@@ -56,14 +57,33 @@
       .rectangle {
         bottom: 100px;
       }
-      .portfolio-card-container{
-
-          .portfolio-card {
-             
-              right: -50px;
-              
-            }
+      .portfolio-card-container {
+        .portfolio-card {
+          right: -50px;
         }
+      }
+    }
+
+    // about us section
+    .about-us-section {
+      .card-container {
+        padding-top:70px;
+        .about-us_card {
+          max-width: 420px;
+        }
+
+        .about-us-img-container {
+          position: relative;
+          img {
+            width: 430px;
+            height: 570px;
+
+            &:last-of-type {
+              transform: translate(60%, 50%);
+            }
+          }
+        }
+      }
     }
   }
 }

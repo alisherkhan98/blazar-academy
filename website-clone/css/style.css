@@ -11,7 +11,7 @@
   body .portfolio-section .portfolio-section_image-container {
     grid-template-columns: repeat(2, calc(50% - 15px));
   }
-  body .portfolio-section .rectangle {
+  body .portfolio-section .rect-container .rectangle {
     left: 170px;
     transform: translateX(0);
     width: 300px;
@@ -23,6 +23,19 @@
     width: 100%;
     max-width: 430px;
   }
+  body .about-us-section .card-container .about-us_card {
+    max-width: 339px;
+  }
+  body .about-us-section .card-container .about-us_card h2 {
+    font-size: 48px;
+  }
+  body .about-us-section .card-container .about-us-img-container {
+    position: relative;
+  }
+  body .about-us-section .card-container .about-us-img-container img {
+    width: 380px;
+    height: 510px;
+  }
 }
 @media screen and (min-width: 820px) {
   body .mobile-app-section {
@@ -33,7 +46,6 @@
     width: 50%;
     min-height: 627px;
     height: 100%;
-    background-position: 100% 50%;
   }
   body .mobile-app-section .mobile-app-section_container {
     width: 50%;
@@ -79,15 +91,36 @@
   body .brands-section .brands-container {
     grid-template-columns: repeat(3, 1fr);
   }
+  body .about-us-section .card-container {
+    padding-top: 150px;
+    min-height: 1184px;
+  }
+  body .about-us-section .card-container .about-us_card {
+    max-width: 393px;
+  }
+  body .about-us-section .card-container .about-us-img-container {
+    position: relative;
+  }
+  body .about-us-section .card-container .about-us-img-container img {
+    width: 410px;
+    height: 550px;
+  }
+  body .about-us-section .card-container .about-us-img-container img:last-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 @media screen and (min-width: 1040px) {
   body .hero-section {
     flex-direction: row;
+    gap: 50px;
   }
   body .hero-section .hero-section_image {
     width: 50%;
   }
   body .hero-section .hero-section_container {
+    margin-left: auto;
     width: 50%;
   }
   body .mobile-app-section .mobile-app-section_container {
@@ -116,6 +149,22 @@
   }
   body .portfolio-section .portfolio-card-container .portfolio-card {
     right: -50px;
+  }
+  body .about-us-section .card-container {
+    padding-top: 70px;
+  }
+  body .about-us-section .card-container .about-us_card {
+    max-width: 420px;
+  }
+  body .about-us-section .card-container .about-us-img-container {
+    position: relative;
+  }
+  body .about-us-section .card-container .about-us-img-container img {
+    width: 430px;
+    height: 570px;
+  }
+  body .about-us-section .card-container .about-us-img-container img:last-of-type {
+    transform: translate(60%, 50%);
   }
 }
 * {
@@ -185,7 +234,6 @@ nav .container a img {
 .hero-section .hero-section_container {
   width: 100%;
   max-width: 600px;
-  margin-left: auto;
 }
 .hero-section .hero-section_container h1 {
   font-size: 3rem;
@@ -220,7 +268,6 @@ nav .container a img {
   background-image: url("https://images02.nicepagecdn.com/c461c07a441a5d220e8feb1a/d7dc502250955d50b21bd3f8/ad-min.jpg");
   min-height: 434px;
   width: 100%;
-  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 30% 50%;
@@ -540,7 +587,16 @@ nav .container a img {
 .portfolio-section .portfolio-card-container .portfolio-card button:hover {
   background-color: #e474eb;
 }
-.portfolio-section .rectangle {
+.portfolio-section .rect-container {
+  position: absolute;
+  max-width: 900px;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.portfolio-section .rect-container .rectangle {
   background-color: #a37fdf;
   width: 260px;
   position: absolute;
@@ -548,4 +604,69 @@ nav .container a img {
   bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.about-us-section {
+  position: relative;
+  background: linear-gradient(to bottom, #260556, #260556 50%, #f2f2f2 50%, #f2f2f2 100%);
+}
+.about-us-section .card-container {
+  width: 100%;
+  max-width: 1040px;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 380px;
+  min-height: 1184px;
+}
+.about-us-section .card-container .about-us_card {
+  background-color: #a37fdf;
+  padding: 50px 30px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 3;
+  right: 50px;
+  left: auto;
+  top: 70px;
+  max-width: 270px;
+  color: white;
+}
+.about-us-section .card-container .about-us_card h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.about-us-section .card-container .about-us_card p {
+  font-size: 16px;
+}
+.about-us-section .card-container .about-us_card button {
+  background-color: #a37fdf;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  border: 2px solid white;
+  margin-top: 30px;
+}
+.about-us-section .card-container .about-us_card button:hover {
+  background-color: #e474eb;
+}
+.about-us-section .about-us-img-container {
+  position: relative;
+}
+.about-us-section .about-us-img-container img {
+  width: 270px;
+  height: 370px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
+  transform: translateX(50px);
+}
+.about-us-section .about-us-img-container img:last-of-type {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(40%, 65%);
 }

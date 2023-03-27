@@ -23,19 +23,43 @@
         grid-template-columns: repeat(2, calc(50% - 15px));
       }
 
-      .rectangle {
-        left: 170px;
-        transform: translateX(0);
-        width: 300px;
-    }
-    
-    .portfolio-card-container {
+      .rect-container {
+        .rectangle {
+          left: 170px;
+          transform: translateX(0);
+          width: 300px;
+        }
+      }
+
+      .portfolio-card-container {
         .portfolio-card {
-            left: auto;
+          left: auto;
           top: -120px;
           right: -20px;
           width: 100%;
           max-width: 430px;
+        }
+      }
+    }
+
+    // about us section
+    .about-us-section {
+      .card-container {
+        .about-us_card {
+          max-width: 339px;
+          h2{
+            font-size: 48px;
+          }
+        }
+        
+        .about-us-img-container {
+          position: relative;
+          img {
+            width: 380px;
+            height: 510px;
+
+            
+          }
         }
       }
     }
@@ -51,7 +75,6 @@
         width: 50%;
         min-height: 627px;
         height: 100%;
-        background-position: 100% 50%;
       }
       .mobile-app-section_container {
         width: 50%;
@@ -109,6 +132,35 @@
 
       .brands-container {
         grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    // about us section
+
+    .about-us-section {
+      .card-container {
+        padding-top: 150px;
+        min-height: 1184px;
+
+        .about-us_card {
+          max-width: 393px;
+        }
+
+        .about-us-img-container {
+          position: relative;
+          img {
+            width: 410px;
+            height: 550px;
+            // transform: translateX(150px);
+
+            &:last-of-type {
+              position: absolute;
+              top: 0;
+              left: 0;
+              //   transform: translate(calc(150px + 40%), 65%);
+            }
+          }
+        }
       }
     }
   }

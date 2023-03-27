@@ -79,7 +79,6 @@ nav {
   .hero-section_container {
     width: 100%;
     max-width: 600px;
-    margin-left: auto;
     h1 {
       font-size: 3rem;
       margin-bottom: 30px;
@@ -117,11 +116,9 @@ nav {
     background-image: url("https://images02.nicepagecdn.com/c461c07a441a5d220e8feb1a/d7dc502250955d50b21bd3f8/ad-min.jpg");
     min-height: 434px;
     width: 100%;
-    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 30% 50%;
-
   }
 }
 
@@ -407,8 +404,8 @@ nav {
       position: absolute;
       z-index: 3;
       right: 0;
-      left:0;
-top: 20px;
+      left: 0;
+      top: 20px;
       h2 {
         font-size: 30px;
         margin-bottom: 20px;
@@ -420,14 +417,87 @@ top: 20px;
       }
     }
   }
-
-  .rectangle {
-    background-color: $primary-color;
-    width: 260px;
+  .rect-container {
     position: absolute;
-    top: 60px;
-    bottom: 60px;
+    max-width: 900px;
+    width: 100%;
+    top: 0;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    .rectangle {
+      background-color: $primary-color;
+      width: 260px;
+      position: absolute;
+      top: 60px;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.about-us-section {
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    $secondary-color,
+    $secondary-color 50%,
+    #f2f2f2 50%,
+    #f2f2f2 100%
+  );
+  .card-container {
+    width: 100%;
+    max-width: 1040px;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 380px;
+    min-height: 1184px;
+    .about-us_card {
+      background-color: $primary-color;
+      padding: 50px 30px;
+      border-radius: 10px;
+      position: absolute;
+      z-index: 3;
+      right: 50px;
+      left: auto;
+      top: 70px;
+      max-width: 270px;
+      color: white;
+
+      h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      button {
+        @include my-btn;
+        border: 2px solid white;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .about-us-img-container {
+    position: relative;
+    img {
+      width: 270px;
+      height: 370px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
+      transform: translateX(50px);
+
+      &:last-of-type {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(40%, 65%);
+      }
+    }
   }
 }
