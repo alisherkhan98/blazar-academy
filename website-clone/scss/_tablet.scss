@@ -1,0 +1,180 @@
+@media screen and (min-width: 640px) {
+  body {
+    // hero section
+    .hero-section {
+      .hero-section_image {
+        min-height: 600px;
+      }
+    }
+
+    // brands-section
+    .brands-section {
+      .brands-container {
+        & > div {
+          padding: 30px;
+        }
+      }
+    }
+
+    //  portfolio section
+    .portfolio-section {
+      padding: 120px 90px 300px;
+      .portfolio-section_image-container {
+        grid-template-columns: repeat(2, calc(50% - 15px));
+      }
+
+      .rect-container {
+        .rectangle {
+          left: 170px;
+          transform: translateX(0);
+          width: 300px;
+        }
+      }
+
+      .portfolio-card-container {
+        .portfolio-card {
+          left: auto;
+          top: -120px;
+          right: -20px;
+          width: 100%;
+          max-width: 430px;
+        }
+      }
+    }
+
+    // about us section
+    .about-us-section {
+      .card-container {
+        min-height: 1284px;
+
+        .about-us_card {
+          max-width: 339px;
+          h2 {
+            font-size: 48px;
+          }
+        }
+
+        .about-us-img-container {
+          position: relative;
+          img {
+            width: 380px;
+            height: 510px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 820px) {
+  body {
+    // mobile app
+    .mobile-app-section {
+      flex-direction: row;
+      align-items: center;
+      .mobile-app-section_image {
+        width: 50%;
+        min-height: 627px;
+        height: 100%;
+      }
+      .mobile-app-section_container {
+        width: 50%;
+        margin-right: auto;
+        max-width: 630px;
+      }
+    }
+
+    // what-we-do section
+    .what-we-do-section {
+      flex-direction: row;
+      align-items: center;
+      .what-we-do-section_image {
+        width: 50%;
+        min-height: 627px;
+        height: 100%;
+      }
+      .what-we-do-section_container {
+        width: 50%;
+        max-width: 630px;
+        margin-left: auto;
+      }
+    }
+    // testimonial section
+    .testimonial-section {
+      .testimonial-section_card-container {
+        grid-template-columns: repeat(2, calc(50% - 15px));
+      }
+    }
+
+    // services section
+    .services-section {
+      .services-section_card-container {
+        grid-template-columns: repeat(2, calc(50% - 22.5px));
+      }
+    }
+
+    // brands-section
+    .brands-section {
+      form {
+        flex-direction: row;
+        max-width: 620px;
+        margin: 0 auto;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 30px;
+        button {
+          max-width: max-content;
+          margin-bottom: 0;
+        }
+        input {
+          margin-bottom: 0;
+        }
+      }
+
+      .brands-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    // about us section
+
+    .about-us-section {
+      .card-container {
+        padding-top: 150px;
+        min-height: 1184px;
+
+        .about-us_card {
+          max-width: 393px;
+        }
+
+        .about-us-img-container {
+          position: relative;
+          img {
+            width: 410px;
+            height: 550px;
+            // transform: translateX(150px);
+
+            &:last-of-type {
+              position: absolute;
+              top: 0;
+              left: 0;
+              //   transform: translate(calc(150px + 40%), 65%);
+            }
+          }
+        }
+      }
+    }
+
+    // our way section
+
+    .our-way-section {
+      .our-way_grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        .our-way_grid_item {
+     
+        }
+      }
+    }
+  }
+}

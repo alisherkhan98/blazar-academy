@@ -1,0 +1,13 @@
+@mixin my-btn {
+    background-color: $primary-color;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    &:hover{
+        background-color: #e474eb;
+    }
+}
