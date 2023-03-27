@@ -83,16 +83,14 @@
 @media screen and (min-width: 1040px) {
   body .hero-section {
     flex-direction: row;
-    gap: 50px;
   }
   body .hero-section .hero-section_image {
-    flex: 1 1 0;
+    width: 50%;
   }
   body .hero-section .hero-section_container {
-    flex: 1 1 0;
+    width: 50%;
   }
   body .mobile-app-section .mobile-app-section_container {
-    margin-right: 15%;
     padding: 50px;
   }
   body .what-we-do-section .what-we-do-section_container {
@@ -186,6 +184,8 @@ nav .container a img {
 }
 .hero-section .hero-section_container {
   width: 100%;
+  max-width: 600px;
+  margin-left: auto;
 }
 .hero-section .hero-section_container h1 {
   font-size: 3rem;
@@ -196,7 +196,6 @@ nav .container a img {
   grid-template-columns: repeat(2, calc(50% - 15px));
   gap: 30px;
   margin-bottom: 70px;
-  max-width: 600px;
 }
 .hero-section .hero-section_container .hero-section_cards-container .hero-section_card {
   background-color: #fff;
@@ -224,6 +223,7 @@ nav .container a img {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 30% 50%;
 }
 
 .mobile-app-section {

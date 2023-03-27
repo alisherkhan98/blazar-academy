@@ -3,19 +3,17 @@
     // hero section
     .hero-section {
       flex-direction: row;
-      gap: 50px;
       .hero-section_image {
-        flex: 1 1 0;
+        width: 50%;
       }
       .hero-section_container {
-        flex: 1 1 0;
+        width: 50%;
       }
     }
 
     // mobile app
     .mobile-app-section {
       .mobile-app-section_container {
-        margin-right: 15%;
         padding: 50px;
       }
     }
