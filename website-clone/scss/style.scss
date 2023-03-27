@@ -437,6 +437,7 @@ nav {
   }
 }
 
+// about us section
 .about-us-section {
   position: relative;
   background: linear-gradient(
@@ -452,7 +453,7 @@ nav {
     position: relative;
     margin: 0 auto;
     padding-top: 380px;
-    min-height: 1184px;
+    min-height: 1080px;
     .about-us_card {
       background-color: $primary-color;
       padding: 50px 30px;
@@ -497,6 +498,44 @@ nav {
         top: 0;
         left: 0;
         transform: translate(40%, 65%);
+      }
+    }
+  }
+}
+
+.our-way-section {
+  text-align: center;
+  padding: 0 50px 0;
+  background-color: #f2f2f2;
+
+  .our-way-section-container{
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+  h3 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: $primary-color;
+  }
+  p {
+    margin-bottom: 20px;
+    &:first-of-type {
+        margin: 0 auto;
+      margin-bottom: 50px;
+      max-width: 645px;
+    }
+  }
+  .our-way_grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 100%;
+    .our-way_grid_item {
+      p {
+        font-size: 16px;
       }
     }
   }

@@ -68,6 +68,7 @@
     .about-us-section {
       .card-container {
         padding-top:70px;
+        min-height: 1080px;
         .about-us_card {
           max-width: 420px;
         }
@@ -85,5 +86,18 @@
         }
       }
     }
+
+     // our way section
+
+     .our-way-section {
+  
+        .our-way_grid {
+          display: grid;
+          grid-template-columns: repeat(4,1fr);
+          .our-way_grid_item {
+           
+          }
+        }
+      }
   }
 }

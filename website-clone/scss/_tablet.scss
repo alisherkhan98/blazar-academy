@@ -45,20 +45,20 @@
     // about us section
     .about-us-section {
       .card-container {
+        min-height: 1284px;
+
         .about-us_card {
           max-width: 339px;
-          h2{
+          h2 {
             font-size: 48px;
           }
         }
-        
+
         .about-us-img-container {
           position: relative;
           img {
             width: 380px;
             height: 510px;
-
-            
           }
         }
       }
@@ -160,6 +160,19 @@
               //   transform: translate(calc(150px + 40%), 65%);
             }
           }
+        }
+      }
+    }
+
+    // our way section
+
+    .our-way-section {
+      .our-way_grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        .our-way_grid_item {
+     
         }
       }
     }
