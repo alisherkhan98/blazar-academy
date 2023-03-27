@@ -1,2 +1,13 @@
-Niente da dire, ovviamente non sei alle prime armi.
-Ho giusto rimosso i commenti dal curriculum perchè il tuo html è già abbastanza chiaro, si commenta da solo.
+Ho giusto rimosso la maggior parte dei commenti sia dal curriculum che dal sito perchè sia il tuo html che il tuo css è già abbastanza chiaro, si commenta da solo.
+Aggiungi commenti solo nel caso in cui non riesci a spiegarti chiaramente attraverso il codice. I commenti sono un male, talvolta necessario.
+
+Visto che hai usato sass a questo punto avresti potuto dividere le diverse sezioni del sito in parziali 
+e fare in modo che dentro styles.scss ci fossero solo @imports. Visto che sass ci da questa possibilità possiamo sfruttarla per 
+favorire la leggibilità del nostro progetto.
+
+Per rendere le tue grid più responsive puoi dare un'occhiata a questo articolo
+https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
+potrebbe risparmiarti qualche media query. In linea generale meno media query inserisci e meglio è. Per inserirne il meno possibile
+è fondamentale capire la natura del layout, cercare di infilarsi nei ragionamenti del designer.
+
+In definitiva, ottimo lavoro! Continua così!

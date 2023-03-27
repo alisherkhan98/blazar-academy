@@ -1,13 +1,11 @@
 @media screen and (min-width: 640px) {
   body {
-    // hero section
     .hero-section {
       .hero-section_image {
         min-height: 600px;
       }
     }
 
-    // brands-section
     .brands-section {
       .brands-container {
         & > div {
@@ -16,7 +14,6 @@
       }
     }
 
-    //  portfolio section
     .portfolio-section {
       padding: 120px 90px 300px;
       .portfolio-section_image-container {
@@ -42,7 +39,6 @@
       }
     }
 
-    // about us section
     .about-us-section {
       .card-container {
         min-height: 1284px;
@@ -67,7 +63,6 @@
 }
 @media screen and (min-width: 820px) {
   body {
-    // mobile app
     .mobile-app-section {
       flex-direction: row;
       align-items: center;
@@ -83,7 +78,6 @@
       }
     }
 
-    // what-we-do section
     .what-we-do-section {
       flex-direction: row;
       align-items: center;
@@ -98,21 +92,18 @@
         margin-left: auto;
       }
     }
-    // testimonial section
     .testimonial-section {
       .testimonial-section_card-container {
         grid-template-columns: repeat(2, calc(50% - 15px));
       }
     }
 
-    // services section
     .services-section {
       .services-section_card-container {
         grid-template-columns: repeat(2, calc(50% - 22.5px));
       }
     }
 
-    // brands-section
     .brands-section {
       form {
         flex-direction: row;
@@ -135,8 +126,6 @@
       }
     }
 
-    // about us section
-
     .about-us-section {
       .card-container {
         padding-top: 150px;
@@ -151,20 +140,16 @@
           img {
             width: 410px;
             height: 550px;
-            // transform: translateX(150px);
 
             &:last-of-type {
               position: absolute;
               top: 0;
               left: 0;
-              //   transform: translate(calc(150px + 40%), 65%);
             }
           }
         }
       }
     }
-
-    // our way section
 
     .our-way-section {
       .our-way_grid {
