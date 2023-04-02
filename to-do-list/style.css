@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 3rem 0;
+  color: #4cabaf;
+}
+
+.page-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 100%;
+  margin-block: 10px;
+  padding: 10px;
+}
+
+.add-btn {
+  background-color: #bfd4db;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  color: #242d31;
+  font-weight: 600;
+  font-size: 16px;
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #aecbd6;
+}
+
+.to-do-list {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.list-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #e6e6e6;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  height: 50px;
+  transition: all .2s ease-out;
+  transition: opacity .2s .5s ease-out;
+}
+
+.list-item :hover {
+  background-color: #d3d2d2;
+  width: 100px;
+}
+
+.list-item.completed:not(.removed)  {
+  background-color: rgb(199, 255, 199);
+}
+.list-item.completed:hover {
+  background-color: rgb(181, 255, 181);
+}
+
+.list-item.removed {
+  background-color: rgb(255, 115, 115) !important;
+  opacity: 0;
+}
