@@ -12,6 +12,7 @@ table.innerHTML = `
     <th>Username</th>
     <th>Email</th>
     <th>Phone</th>
+    <th>Actions</th>
   </tr>
 </thead>
 `;
@@ -31,12 +32,11 @@ fetch("https://jsonplaceholder.typicode.com/users")
 
 function tableFromList(list) {
   list.forEach((item) => {
-   addUserToTable(item)
+    addUserToTable(item);
   });
 }
 
 const newUserForm = document.querySelector(".new-user-form");
-const addBtn = document.querySelector(".add-btn");
 newUserForm.onsubmit = createUser;
 
 function createUser() {
@@ -58,21 +58,48 @@ function createUser() {
       if (!response.ok) {
         throw new Error("there was an error");
       }
-      return response.json()
+      return response.json();
     })
-    .then(user =>{
-      addUserToTable(user)
+    .then((user) => {
+      console.log(user);
+      addUserToTable(user);
     })
     .catch((err) => console.log(err));
 }
 
-function addUserToTable(user){
+function addUserToTable(user) {
   let row = document.createElement("tr");
+  row.dataset.userId = user.id;
   row.innerHTML = `
   <td>${user.name}</td>
   <td>${user.username}</td>
   <td>${user.email}</td>
   <td>${user.phone}</td>
+  <td>
+  <button class="action-btn" title="edit" data-user-id=user.id>  <i class="fa-solid fa-pen-to-square"></i> </button>
+  <button class="action-btn delete-btn" title="delete" data-user-id=user.id>  <i class="fa-solid fa-trash-can" style="color: #4cabaf;"></i>  </button>
+  </td>
   `;
   tbody.appendChild(row);
+}
+
+document.addEventListener("click", handleDelete);
+function handleDelete(e) {
+  if (!e.target.closest("button")) {
+    return;
+  }
+  if (e.target.closest("button").classList.contains("delete-btn")) {
+    deleteUser(e.target.closest("tr").dataset.userId);
+  }
+}
+
+function deleteUser(id) {
+  fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+    method: "DELETE",
+  }).then(() => removeUserFromTable(id));
+}
+
+function removeUserFromTable(id){
+  let deletedRow = document.querySelector(`tr[data-user-id='${id}']`)
+  deletedRow.remove()
 }
