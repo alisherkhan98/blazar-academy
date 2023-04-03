@@ -30,6 +30,9 @@ h1, h2{
   margin: 2rem 0;
   color: #4cabaf;
 }
+#table-container{
+  overflow-x: scroll;
+}
 .my-table {
   text-align: center;
   font-family: Arial, sans-serif;
