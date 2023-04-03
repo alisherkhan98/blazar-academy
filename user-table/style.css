@@ -31,7 +31,7 @@ h1, h2{
   color: #4cabaf;
 }
 #table-container{
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .my-table {
   text-align: center;
