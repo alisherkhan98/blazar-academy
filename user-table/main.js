@@ -20,10 +20,11 @@ tableContainer.appendChild(table);
 
 const tbody = document.createElement("tbody");
 table.appendChild(tbody);
-
+let usersList = [];
 fetch("https://jsonplaceholder.typicode.com/users")
   .then((response) => response.json())
   .then((users) => {
+    usersList = users;
     tableFromList(users);
   })
   .catch((err) => {
@@ -78,20 +79,35 @@ function addUserToTable(user) {
   <td>${user.email}</td>
   <td>${user.phone}</td>
   <td>
-  <button class="action-btn" title="edit" data-user-id=user.id>  <i class="fa-solid fa-pen-to-square"></i> </button>
+  <button class="action-btn edit-btn" title="edit" data-user-id=user.id>  <i class="fa-solid fa-pen-to-square"></i> </button>
   <button class="action-btn delete-btn" title="delete" data-user-id=user.id>  <i class="fa-solid fa-trash-can" style="color: #4cabaf;"></i>  </button>
   </td>
   `;
   tbody.appendChild(row);
 }
 
-document.addEventListener("click", handleDelete);
-function handleDelete(e) {
-  if (!e.target.closest("button")) {
+const editDialog = document.getElementById("editDialog");
+const editForm = document.getElementById("editForm");
+const editBtn = document.getElementById("dialog-edit-btn");
+const cancelBtn = document.getElementById("dialog-cancel-btn");
+
+cancelBtn.onclick = () => {
+  editDialog.close();
+};
+
+
+
+// listener per i due tasti elimina e modifica nella tabella
+document.addEventListener("click", handleAction);
+function handleAction(e) {
+  if (!e.target.closest("button") || !e.target.closest("tr")) {
     return;
   }
+  const userId = e.target.closest("tr").dataset.userId;
   if (e.target.closest("button").classList.contains("delete-btn")) {
-    deleteUser(e.target.closest("tr").dataset.userId);
+    deleteUser(userId);
+  } else if (e.target.closest("button").classList.contains("edit-btn")) {
+    openDialog(userId);
   }
 }
 
@@ -109,6 +125,46 @@ function removeUserFromTable(id) {
   let deletedRow = document.querySelector(`tr[data-user-id='${id}']`);
   deletedRow.remove();
 }
+
+function openDialog(id) {
+  editDialog.show();
+  const currentUser = usersList.find((user) => user.id == id);
+  const formElements = editForm.elements;
+  formElements.name.value = currentUser.name;
+  formElements.username.value = currentUser.username;
+  formElements.email.value = currentUser.email;
+  formElements.phone.value = currentUser.phone;
+  editBtn.onclick = ()=>{
+    updateUser(id)
+  };
+}
+
+function updateUser(id) {
+  const formElements = editForm.elements;
+  let newUserObject = {
+    name: formElements.name.value,
+    username: formElements.username.value,
+    email: formElements.email.value,
+    phone: formElements.phone.value,
+  };
+  setLoading(true)
+  fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify(newUserObject),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((newUser) => {
+      removeUserFromTable(id)
+      addUserToTable(newUser)
+      setLoading(false)
+      editDialog.close()
+    });
+}
+
+
 
 function setLoading(isLoading) {
   if (isLoading) {

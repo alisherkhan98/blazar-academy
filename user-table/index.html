@@ -24,6 +24,22 @@
 
         <button type="submit" class="add-btn">Add user</button>
       </form>
+      <dialog class="edit-dialog" id="editDialog">
+        <form class="edit-user-form" action="javascript:void('')" id="editForm">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required>
+         <label for="username">Username</label>
+          <input type="text" name="username" id="username" required>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required>
+          <label for="phone">Phone</label>
+          <input type="tel" name="phone" id="phone" required>
+  
+          <button type="submit" class="edit-btn " id="dialog-edit-btn">Edit user</button>
+          <button type="button" class="edit-btn dialog-cancel-btn" id="dialog-cancel-btn">Cancel</button>
+
+        </form>
+      </dialog>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
