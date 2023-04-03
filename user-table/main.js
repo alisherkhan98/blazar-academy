@@ -47,6 +47,7 @@ function createUser() {
     email: formElements.email.value,
     phone: formElements.phone.value,
   };
+  setLoading(true);
   fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
     body: JSON.stringify(newUserObject),
@@ -63,6 +64,7 @@ function createUser() {
     .then((user) => {
       console.log(user);
       addUserToTable(user);
+      setLoading(false);
     })
     .catch((err) => console.log(err));
 }
@@ -94,12 +96,28 @@ function handleDelete(e) {
 }
 
 function deleteUser(id) {
+  setLoading(true);
   fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
     method: "DELETE",
-  }).then(() => removeUserFromTable(id));
+  }).then(() => {
+    removeUserFromTable(id);
+    setLoading(false);
+  });
 }
 
-function removeUserFromTable(id){
-  let deletedRow = document.querySelector(`tr[data-user-id='${id}']`)
-  deletedRow.remove()
+function removeUserFromTable(id) {
+  let deletedRow = document.querySelector(`tr[data-user-id='${id}']`);
+  deletedRow.remove();
+}
+
+function setLoading(isLoading) {
+  if (isLoading) {
+    let loader = document.createElement("div");
+    loader.className = "loader";
+    document.body.append(loader);
+  } else {
+    document.querySelectorAll(".loader").forEach((loader) => {
+      loader.remove();
+    });
+  }
 }
