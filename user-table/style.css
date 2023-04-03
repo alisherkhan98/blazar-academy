@@ -1,0 +1,98 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2{
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 2rem 0;
+  color: #4cabaf;
+}
+.my-table {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 3rem auto;
+}
+
+.my-table th {
+  background-color: #4cabaf;
+  color: white;
+  text-align: left;
+  padding: 8px;
+}
+
+.my-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.my-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.new-user-form{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.new-user-form input{
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.new-user-form label{
+  font-size: 14px;
+}
+
+.add-btn {
+  background-color: #4cabaf;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #489ea1;
+}
+.add-btn:active {
+  background-color: #326f71;
+}
