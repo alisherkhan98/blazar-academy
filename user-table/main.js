@@ -64,6 +64,7 @@ function createUser() {
     })
     .then((user) => {
       console.log(user);
+      usersList.push(user);
       addUserToTable(user);
       setLoading(false);
     })
@@ -79,8 +80,8 @@ function addUserToTable(user) {
   <td>${user.email}</td>
   <td>${user.phone}</td>
   <td>
-  <button class="action-btn edit-btn" title="edit" data-user-id=user.id>  <i class="fa-solid fa-pen-to-square"></i> </button>
-  <button class="action-btn delete-btn" title="delete" data-user-id=user.id>  <i class="fa-solid fa-trash-can" style="color: #4cabaf;"></i>  </button>
+  <button class="action-btn edit-btn" title="edit" data-user-id=${user.id}>  <i class="fa-solid fa-pen-to-square"></i> </button>
+  <button class="action-btn delete-btn" title="delete" data-user-id=${user.id}>  <i class="fa-solid fa-trash-can" style="color: #4cabaf;"></i>  </button>
   </td>
   `;
   tbody.appendChild(row);
@@ -147,9 +148,10 @@ function updateUser(id) {
     email: formElements.email.value,
     phone: formElements.phone.value,
   };
+  if (!editForm.reportValidity()) return
   setLoading(true)
   fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
-    method: "PATCH",
+    method: "PUT",
     body: JSON.stringify(newUserObject),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
