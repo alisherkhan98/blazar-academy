@@ -11,3 +11,10 @@ potrebbe risparmiarti qualche media query. In linea generale meno media query in
 è fondamentale capire la natura del layout, cercare di infilarsi nei ragionamenti del designer.
 
 In definitiva, ottimo lavoro! Continua così!
+
+
+Trovo il codice molto leggibile e il nome delle funzioni accurato. Mi rendo conto di non avere molto, se non niente, da criticare.
+Potresti iniziare a conoscere e valutare dei pattern interessanti. Ti suggerisco un paio di fonti:
+https://refactoring.guru/design-patterns
+https://www.youtube.com/watch?v=v9ejT8FO-7I&list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc
+https://gameprogrammingpatterns.com/contents.html
